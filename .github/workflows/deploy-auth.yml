@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'auth/**'
+      - "auth/**"
 
 jobs:
   build:
@@ -20,6 +20,6 @@ jobs:
       - run: docker push josephlee01/auth
       - uses: digitalocean/action-doctl@v2
         with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN}}
-      - run: doctl kubernetes cluster kubeconfig save newticketing
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - run: doctl kubernetes cluster kubeconfig save ticketing
       - run: kubectl rollout restart deployment auth-depl
