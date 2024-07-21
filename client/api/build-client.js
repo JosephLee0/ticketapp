@@ -5,7 +5,7 @@ export default ({ req }) => {
     // We are on the server
 
     return axios.create({
-      baseURL: "http://www.jtworks.one",
+      baseURL: "http://www.jtworks.one/",
       headers: req.headers,
     });
   } else {
